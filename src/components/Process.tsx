@@ -275,11 +275,11 @@ const Process: React.FC = () => {
   };
 
   return (
-    <section id="process" className="py-12 md:py-16 relative bg-[#080e1c] overflow-hidden">
+    <section id="process" className="py-12 md:py-16 relative bg-gray-50 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#03e9f4]/5 rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#00BCD4]/5 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.3, 1],
             opacity: [0.3, 0.6, 0.3],
@@ -291,7 +291,7 @@ const Process: React.FC = () => {
           }}
         />
         <motion.div
-          className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#7928ca]/5 rounded-full blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#673AB7]/5 rounded-full blur-3xl"
           animate={{
             scale: [1.3, 1, 1.3],
             opacity: [0.6, 0.3, 0.6],
@@ -319,14 +319,14 @@ const Process: React.FC = () => {
             transition={{ duration: 1, delay: 0.2 }}
             className="inline-block mb-6"
           >
-            <div className="w-16 h-16 mx-auto bg-gradient-to-r from-[#03e9f4] to-[#7928ca] rounded-full flex items-center justify-center">
+            <div className="w-16 h-16 mx-auto bg-gradient-to-r from-[#00BCD4] to-[#673AB7] rounded-full flex items-center justify-center">
               <span className="text-2xl">⚡</span>
             </div>
           </motion.div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">
-            <span className="gradient-text">HOW WE WORK</span>
+            <span className="text-[#1A237E] font-bold">HOW WE WORK</span>
           </h2>
-          <p className="text-sm md:text-base text-gray-300 max-w-3xl mx-auto">
+          <p className="text-sm md:text-base text-gray-600 max-w-3xl mx-auto">
             Our proven process ensures consistent quality and results
           </p>
         </motion.div>
@@ -346,6 +346,9 @@ const Process: React.FC = () => {
           <h3 className="text-xl md:text-2xl font-bold text-center mb-8 text-white">
             Here's how we turn your vision into reality:
           </h3>
+          <h3 className="text-xl md:text-2xl font-bold text-center mb-8 text-[#1A237E]">
+            Here's how we turn your vision into reality:
+          </h3>
           
           <div className="grid md:grid-cols-2 gap-6">
             {steps.map((step, index) => (
@@ -354,7 +357,7 @@ const Process: React.FC = () => {
                 initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                 animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                 transition={{ duration: 0.6, delay: index * 0.2 + 0.8 }}
-                className="bg-[#111827]/60 backdrop-blur-md p-6 rounded-lg border border-[#03e9f4]/20 hover:border-[#03e9f4]/40 transition-all duration-300 group"
+                className="bg-white p-6 rounded-lg border border-gray-200 hover:border-[#00BCD4] transition-all duration-300 group shadow-lg hover:shadow-xl"
                 whileHover={{ scale: 1.02, y: -5 }}
               >
                 <div className="flex items-start">
@@ -369,7 +372,10 @@ const Process: React.FC = () => {
                     <h4 className="text-lg font-semibold mb-2 text-[#03e9f4] group-hover:text-[#60efff] transition-colors">
                       {index + 1}. {step.title}
                     </h4>
-                    <p className="text-gray-300 text-sm leading-relaxed group-hover:text-gray-200 transition-colors">
+                    <h4 className="text-lg font-semibold mb-2 text-[#1A237E] group-hover:text-[#00BCD4] transition-colors">
+                      {index + 1}. {step.title}
+                    </h4>
+                    <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors">
                       {step.description}
                     </p>
                   </div>
@@ -382,7 +388,7 @@ const Process: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 1.5 }}
-            className="text-center text-lg text-[#03e9f4] font-semibold mt-8"
+            className="text-center text-lg text-[#00BCD4] font-semibold mt-8"
           >
             Because for us, it's not just a project. It's a partnership for the long run.
           </motion.p>
@@ -393,7 +399,7 @@ const Process: React.FC = () => {
           <div className="relative">
             {/* Vertical Line */}
             <motion.div
-              className="absolute left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-[#03e9f4] to-[#7928ca] rounded-full"
+              className="absolute left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-[#00BCD4] to-[#673AB7] rounded-full"
               initial={{ scaleY: 0 }}
               animate={inView ? { scaleY: 1 } : { scaleY: 0 }}
               transition={{ duration: 1.5, delay: 0.5 }}
@@ -410,7 +416,7 @@ const Process: React.FC = () => {
               >
                 {/* Dot */}
                 <motion.div
-                  className="w-12 h-12 bg-gradient-to-r from-[#03e9f4] to-[#7928ca] rounded-full flex items-center justify-center text-lg z-10 flex-shrink-0 shadow-lg"
+                  className="w-12 h-12 bg-gradient-to-r from-[#00BCD4] to-[#673AB7] rounded-full flex items-center justify-center text-lg z-10 flex-shrink-0 shadow-lg"
                   initial={{ scale: 0 }}
                   animate={inView ? { scale: [0, 1.2, 1] } : { scale: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2 + 1 }}
@@ -420,11 +426,11 @@ const Process: React.FC = () => {
                 </motion.div>
                 
                 {/* Content */}
-                <div className="ml-4 bg-[#111827]/60 backdrop-blur-md p-4 rounded-lg border border-[#03e9f4]/20 flex-1 hover:border-[#03e9f4]/40 transition-all duration-300">
-                  <h3 className="text-sm font-semibold mb-2 text-[#03e9f4]">
+                <div className="ml-4 bg-white p-4 rounded-lg border border-gray-200 flex-1 hover:border-[#00BCD4] transition-all duration-300 shadow-lg">
+                  <h3 className="text-sm font-semibold mb-2 text-[#1A237E]">
                     {index + 1}. {step.title}
                   </h3>
-                  <p className="text-xs text-gray-300 leading-relaxed">{step.description}</p>
+                  <p className="text-xs text-gray-600 leading-relaxed">{step.description}</p>
                 </div>
               </motion.div>
             ))}

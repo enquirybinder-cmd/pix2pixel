@@ -71,7 +71,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, ind
         {/* Hover effect particles */}
         <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <motion.div
-            className="w-2 h-2 bg-[#03e9f4] rounded-full"
+            className="w-2 h-2 bg-[#00BCD4] rounded-full"
             animate={{
               scale: [1, 1.5, 1],
               opacity: [0.5, 1, 0.5],
@@ -127,12 +127,12 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="py-12 md:py-16 relative dot-grid">
+    <section id="services" className="py-12 md:py-16 relative bg-white dot-grid">
       <div className="container mx-auto px-4">
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
-            className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#03e9f4]/5 rounded-full blur-3xl"
+            className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#00BCD4]/5 rounded-full blur-3xl"
             animate={{
               scale: [1, 1.2, 1],
               opacity: [0.3, 0.6, 0.3],
@@ -144,7 +144,7 @@ const Services: React.FC = () => {
             }}
           />
           <motion.div
-            className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-[#7928ca]/5 rounded-full blur-3xl"
+            className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-[#673AB7]/5 rounded-full blur-3xl"
             animate={{
               scale: [1.2, 1, 1.2],
               opacity: [0.6, 0.3, 0.6],
@@ -171,14 +171,14 @@ const Services: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="inline-block mb-6"
           >
-            <div className="w-16 h-16 mx-auto bg-gradient-to-r from-[#03e9f4] to-[#7928ca] rounded-full flex items-center justify-center">
+            <div className="w-16 h-16 mx-auto bg-gradient-to-r from-[#00BCD4] to-[#673AB7] rounded-full flex items-center justify-center">
               <Zap className="w-8 h-8 text-white" />
             </div>
           </motion.div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">
-            <span className="gradient-text">OUR SERVICES</span>
+            <span className="text-[#1A237E] font-bold">OUR SERVICES</span>
           </h2>
-          <p className="text-sm md:text-base text-gray-300 max-w-3xl mx-auto">
+          <p className="text-sm md:text-base text-gray-600 max-w-3xl mx-auto">
             We offer IT solutions, system integration, marketing, and graphic design services to give our clients a competitive edge in the market.
           </p>
         </motion.div>
