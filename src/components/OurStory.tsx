@@ -49,6 +49,7 @@ const OurStory: React.FC = () => {
       md:w-[600px] md:h-[600px]   // desktop view
       object-cover mx-auto opacity-100
     "
+  )
   />
 
  
@@ -139,3 +140,4 @@ const OurStory: React.FC = () => {
 };
 
 export default OurStory;
+}
