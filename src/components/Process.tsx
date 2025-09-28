@@ -16,13 +16,13 @@ const ProcessGraphic: React.FC<{ inView: boolean }> = ({ inView }) => {
         {/* Background grid */}
         <defs>
           <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(3, 233, 244, 0.1)" strokeWidth="1"/>
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0, 188, 212, 0.1)" strokeWidth="1"/>
           </pattern>
           <linearGradient id="processGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#03e9f4" />
-            <stop offset="33%" stopColor="#7928ca" />
-            <stop offset="66%" stopColor="#ff0080" />
-            <stop offset="100%" stopColor="#03e9f4" />
+            <stop offset="0%" stopColor="#00BCD4" />
+            <stop offset="33%" stopColor="#673AB7" />
+            <stop offset="66%" stopColor="#00E5FF" />
+            <stop offset="100%" stopColor="#00BCD4" />
           </linearGradient>
           <filter id="glow">
             <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
@@ -53,7 +53,7 @@ const ProcessGraphic: React.FC<{ inView: boolean }> = ({ inView }) => {
           <motion.circle
             key={i}
             r="3"
-            fill="#03e9f4"
+            fill="#00BCD4"
             opacity="0.8"
             animate={inView ? {
               offsetDistance: ["0%", "100%"],
@@ -80,7 +80,7 @@ const ProcessGraphic: React.FC<{ inView: boolean }> = ({ inView }) => {
               cy={step.y}
               r="45"
               fill="none"
-              stroke="rgba(3, 233, 244, 0.3)"
+              stroke="rgba(0, 188, 212, 0.3)"
               strokeWidth="2"
               initial={{ scale: 0, opacity: 0 }}
               animate={inView ? { 
@@ -113,7 +113,6 @@ const ProcessGraphic: React.FC<{ inView: boolean }> = ({ inView }) => {
                 type: "spring",
                 stiffness: 150
               }}
-              whileHover={{ scale: 1.1 }}
             />
             
             {/* Icon */}
@@ -141,7 +140,7 @@ const ProcessGraphic: React.FC<{ inView: boolean }> = ({ inView }) => {
               cy={step.y}
               r="35"
               fill="none"
-              stroke="#03e9f4"
+              stroke="#00BCD4"
               strokeWidth="2"
               opacity="0"
               animate={inView ? {
@@ -164,7 +163,7 @@ const ProcessGraphic: React.FC<{ inView: boolean }> = ({ inView }) => {
             cx={100 + i * 70}
             cy={150 + Math.sin(i) * 80}
             r={2 + Math.random() * 3}
-            fill={i % 2 === 0 ? "#03e9f4" : "#7928ca"}
+            fill={i % 2 === 0 ? "#00BCD4" : "#673AB7"}
             opacity="0.4"
             animate={{
               y: [0, -20, 0],
@@ -209,8 +208,8 @@ const ProcessGraphic: React.FC<{ inView: boolean }> = ({ inView }) => {
               stiffness: 100
             }}
           >
-            <div className="bg-[#111827]/80 backdrop-blur-sm px-3 py-1 rounded-full border border-[#03e9f4]/30">
-              <div className="text-sm font-semibold text-[#03e9f4]">{step.title}</div>
+            <div className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full border border-[#00BCD4]/30 shadow-lg">
+              <div className="text-sm font-semibold text-[#1A237E]">{step.title}</div>
             </div>
           </motion.div>
         ))}
@@ -252,30 +251,8 @@ const Process: React.FC = () => {
     }
   ];
 
-  const pathVariants = {
-    hidden: { pathLength: 0 },
-    visible: { 
-      pathLength: 1,
-      transition: { duration: 2, ease: "easeInOut" }
-    }
-  };
-
-  const dotVariants = {
-    hidden: { scale: 0, opacity: 0 },
-    visible: (i: number) => ({ 
-      scale: 1,
-      opacity: 1,
-      transition: { 
-        delay: i * 0.2,
-        duration: 0.5,
-        type: "spring",
-        stiffness: 100
-      }
-    })
-  };
-
   return (
-    <section id="process" className="py-12 md:py-16 relative bg-gray-50 overflow-hidden">
+    <section id="process" className="py-12 md:py-16 relative bg-[#F5F5F5] overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -319,14 +296,14 @@ const Process: React.FC = () => {
             transition={{ duration: 1, delay: 0.2 }}
             className="inline-block mb-6"
           >
-            <div className="w-16 h-16 mx-auto bg-gradient-to-r from-[#00BCD4] to-[#673AB7] rounded-full flex items-center justify-center">
+            <div className="w-16 h-16 mx-auto bg-gradient-to-r from-[#00BCD4] to-[#673AB7] rounded-full flex items-center justify-center shadow-lg">
               <span className="text-2xl">⚡</span>
             </div>
           </motion.div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">
             <span className="text-[#1A237E] font-bold">HOW WE WORK</span>
           </h2>
-          <p className="text-sm md:text-base text-gray-600 max-w-3xl mx-auto">
+          <p className="text-sm md:text-base text-[#424242] max-w-3xl mx-auto leading-relaxed">
             Our proven process ensures consistent quality and results
           </p>
         </motion.div>
@@ -343,9 +320,6 @@ const Process: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="max-w-4xl mx-auto mb-12"
         >
-          <h3 className="text-xl md:text-2xl font-bold text-center mb-8 text-white">
-            Here's how we turn your vision into reality:
-          </h3>
           <h3 className="text-xl md:text-2xl font-bold text-center mb-8 text-[#1A237E]">
             Here's how we turn your vision into reality:
           </h3>
@@ -369,13 +343,10 @@ const Process: React.FC = () => {
                     {step.icon}
                   </motion.div>
                   <div>
-                    <h4 className="text-lg font-semibold mb-2 text-[#03e9f4] group-hover:text-[#60efff] transition-colors">
-                      {index + 1}. {step.title}
-                    </h4>
                     <h4 className="text-lg font-semibold mb-2 text-[#1A237E] group-hover:text-[#00BCD4] transition-colors">
                       {index + 1}. {step.title}
                     </h4>
-                    <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors">
+                    <p className="text-[#424242] text-sm leading-relaxed group-hover:text-[#1A237E] transition-colors">
                       {step.description}
                     </p>
                   </div>
@@ -430,61 +401,12 @@ const Process: React.FC = () => {
                   <h3 className="text-sm font-semibold mb-2 text-[#1A237E]">
                     {index + 1}. {step.title}
                   </h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">{step.description}</p>
+                  <p className="text-xs text-[#424242] leading-relaxed">{step.description}</p>
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
-
-      {/* * Our Story Section 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center mt-12 md:mt-16"
-        >
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={inView ? { scale: 1 } : { scale: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="inline-block mb-6"
-          >
-            <div className="w-12 h-12 mx-auto bg-gradient-to-r from-[#7928ca] to-[#ff0080] rounded-full flex items-center justify-center">
-              <span className="text-xl">📖</span>
-            </div>
-          </motion.div>
-          <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6">
-            <span className="gradient-text">Our Story</span>
-          </h3>
-          <div className="max-w-4xl mx-auto mb-8">
-            <p className="text-lg md:text-xl font-semibold text-white mb-4">
-              Every brand has a story.
-            </p>
-            <p className="text-sm md:text-base text-gray-300 leading-relaxed mb-4">
-              Ours began with friendship, late nights, crazy ideas, a little courage, and a lot of coffee.
-            </p>
-            <p className="text-sm md:text-base text-gray-300 leading-relaxed mb-4">
-              We believed that creativity and technology could light up any business — if used the right way.
-            </p>
-            <p className="text-sm md:text-base text-gray-300 leading-relaxed mb-6">
-              Pix2Pixel became our way of saying to every brand out there: <br />
-              <span className="text-[#03e9f4] font-semibold">"You're not alone. Let's build your dream, pixel by pixel."</span>
-            </p>
-          </div> 
-          
-          <motion.button 
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} 
-            className="gradient-btn text-white px-6 md:px-8 py-3 text-sm md:text-base font-medium"
-            whileHover={{ 
-              scale: 1.05,
-              boxShadow: "0 10px 25px rgba(255, 0, 128, 0.3)"
-            }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Start Your Journey
-          </motion.button>
-        </motion.div> */}
       </div>
     </section>
   );
