@@ -40,19 +40,16 @@ const OurStory: React.FC = () => {
               {/* Placeholder for your image */}
               {/* Background Image with 50% opacity */}
             <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden border border-gray-200 shadow-lg">
-  <img
-    src={storyImage}
-    alt="Story Background"
-    className="
-      absolute inset-0
-      w-[400px] h-[500px]         // mobile view
-      md:w-[600px] md:h-[600px]   // desktop view
-      object-cover mx-auto opacity-100
-    "
-  )
-  />
-
- 
+              <img
+                src={storyImage}
+                alt="Story Background"
+                className="
+                  absolute inset-0
+                  w-[400px] h-[500px]         
+                  md:w-[600px] md:h-[600px]   
+                  object-cover mx-auto opacity-100
+                "
+              />
               
               {/* Floating elements */}
               <motion.div
@@ -140,4 +137,3 @@ const OurStory: React.FC = () => {
 };
 
 export default OurStory;
-}
